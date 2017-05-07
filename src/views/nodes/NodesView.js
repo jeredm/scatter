@@ -1,13 +1,17 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 
 class NodesView extends Component {
   render() {
-      return (
-        <div>
-          Nodes Here
-        </div>
-      );
+    const style = {
+      padding: '10px',
+    };
+
+    return (
+      <div style={style}>
+        Nodes Here
+      </div>
+    );
   }
 }
 
-export default NodesView
+export default NodesView;
