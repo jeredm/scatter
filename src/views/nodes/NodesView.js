@@ -1,4 +1,7 @@
 import React, { Component } from 'react'
+import { Grid } from 'semantic-ui-react'
+import ConfigPanel from './components/ConfigPanel'
+import ServersPanel from './components/ServersPanel'
 
 class NodesView extends Component {
   render() {
@@ -8,7 +11,14 @@ class NodesView extends Component {
 
     return (
       <div style={style}>
-        Nodes Here
+        <Grid divided>
+          <Grid.Column width={10}>
+            <ServersPanel />
+          </Grid.Column>
+          <Grid.Column width={6}>
+            <ConfigPanel />
+          </Grid.Column>
+        </Grid>
       </div>
     )
   }

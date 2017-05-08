@@ -16,7 +16,7 @@ class App extends Component {
       <div className='App'>
         <Container fluid>
           <Menu>
-            <Menu.Item header>Scatter</Menu.Item>
+            <Menu.Item header>Mvn-Scatter</Menu.Item>
             <Menu.Item
               as={Link}
               to='/nodes'
