@@ -1,7 +1,13 @@
 {
-  "name": "scatter",
+  "name": "mvn-scatter",
   "version": "0.1.0",
-  "private": true,
+  "license": "MIT",
+  "contributors": [
+    {
+      "name": "Jered Myers",
+      "email": "jeredamyers@gmail.com"
+    }
+  ],
   "devDependencies": {
     "eslint": "^3.19.0",
     "eslint-config-airbnb": "^14.1.0",
