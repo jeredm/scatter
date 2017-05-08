@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
-import { Button} from 'semantic-ui-react';
-import PropTypes from 'prop-types';
+import React, { Component } from 'react'
+import { Button } from 'semantic-ui-react'
+import PropTypes from 'prop-types'
 
 class VerifyPanel extends Component {
   state = { loading: false, version: '', complete: false };
@@ -8,30 +8,29 @@ class VerifyPanel extends Component {
   handleClick = () => {
     this.setState({
       loading: true,
-    });
+    })
     this.verify()
-      .then(response => {
+      .then((response) => {
         this.setState({
           loading: false,
           version: response.results.data.data,
           complete: true,
-        });
+        })
       })
-      .catch(errors => {
+      .catch((errors) => {
         this.setState({
           loading: false,
           version: 'An error occurred:' + errors,
           complete: true,
         })
       })
-
-  };
+  }
 
   verify = () => {
     return (
       new Promise((resolve, reject) => {
         this.props.verifyMvn()
-          .then(results => {resolve({ results })})
+          .then(results => resolve({ results }))
           .catch(err => reject({ err }))
       })
     )
@@ -39,31 +38,32 @@ class VerifyPanel extends Component {
 
   render() {
     const style = {
-      'paddingBottom': '5px',
-    };
+      paddingBottom: '5px',
+    }
     const completeLabelStyle = {
-      'fontWeight': 'bold',
-    };
+      fontWeight: 'bold',
+    }
     const completeStyle = {
-      'paddingTop': '5px',
-    };
-    const { loading, version, complete } = this.state;
+      paddingTop: '5px',
+    }
+    const { loading, version, complete } = this.state
 
-    let completeDiv = null;
+    let completeDiv = null
     if (complete) {
-      completeDiv =
+      completeDiv = (
         <div style={completeStyle}>
           <span style={completeLabelStyle}>Results of mvn --version:</span><br />
           {version}
         </div>
+      )
     } else {
-      completeDiv = <div></div>
+      completeDiv = <div />
     }
 
     return (
       <div>
         <div style={style}>
-          <p>Verify your Maven installation.</p>
+          <p>Verify your Maven installation. This verifies the installation by running mvn --version.</p>
         </div>
         <div>
           <Button
@@ -76,7 +76,7 @@ class VerifyPanel extends Component {
         <br />
         {completeDiv}
       </div>
-    );
+    )
   }
 }
 
@@ -84,4 +84,4 @@ VerifyPanel.propTypes = {
   verifyMvn: PropTypes.func.isRequired,
 }
 
-export default VerifyPanel;
+export default VerifyPanel

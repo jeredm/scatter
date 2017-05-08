@@ -1,7 +1,7 @@
-import axios from 'axios';
+import axios from 'axios'
 
-export function verifyMvn() {
-  return dispatch => {
-    return axios.get('/api/verify');
+export default function verifyMvn() {
+  return (dispatch) => {
+    return axios.get('/api/verify')
   }
 }

@@ -1,21 +1,19 @@
-import React, { Component } from 'react';
-import './App.css';
+import React, { Component } from 'react'
+import { Container, Menu } from 'semantic-ui-react'
+import { Link } from 'react-router-dom'
 import 'semantic-ui-css/semantic.min.css'
-import { Container, Menu } from 'semantic-ui-react';
-import { Link } from 'react-router-dom';
-
-
+import './App.css'
 
 class App extends Component {
-  state = { activeItem: 'Nodes'};
+  state = { activeItem: 'Nodes' }
 
   handleItemClick = (e, { name }) => this.setState({ activeItem: name })
 
   render() {
-    const { activeItem } = this.state;
+    const { activeItem } = this.state
 
     return (
-      <div className="App">
+      <div className='App'>
         <Container fluid>
           <Menu>
             <Menu.Item header>Scatter</Menu.Item>
@@ -36,8 +34,8 @@ class App extends Component {
           </Menu>
         </Container>
       </div>
-    );
+    )
   }
 }
 
-export default App;
+export default App
