@@ -1,4 +1,4 @@
-# Scatter
+# Mvn-Scatter
 Uses Apache Maven to build an push WAR files to servers. It has a server and a client included. The server is started in the server directory and the client is started in the root directory. Both server and client are started via npm start. The server runs on port 8080 by default and the client runs on port 3000. This tool is useful because servers can easily be included or excluded from deployment allowing you to save time writting and updating scripts. This application is running commands as if you were running them in your terminal, so be careful where to secure it.
 
 ## Installation Required
