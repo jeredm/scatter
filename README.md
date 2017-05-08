@@ -1,8 +1,20 @@
 # Scatter
-Uses Apache Maven to build an push WAR files to servers.
-Here is what you need so far:
-- Apache Maven (M3)
-- MongoDb
+Uses Apache Maven to build an push WAR files to servers. It has a server and a client included. The server is started in the server directory and the client is started in the root directory. Both server and client are started via npm start. The server runs on port 8080 by default and the client runs on port 3000. This tool is useful because servers can easily be included or excluded from deployment allowing you to save time writting and updating scripts. This application is running commands as if you were running them in your terminal, so be careful where to secure it.
+
+## Installation Required
+#### Node.js
+The server is written in Node and the client uses create-react-app which is outlined below.
+
+#### Apache Maven
+This tool is primarily running Maven scripts. This means the server needs to be running on the machine that has the source code for your Maven project. Use the Setup tab in the client to verify that the server can access your Maven install.
+
+#### MongoDb
+MongoDb needs to be installed on your server for the server to operate. The connection can be set in the server/src/config.js file. MongoDb is used to start the list of servers and the commands that needs to be run.
+
+#### A Maven Project
+This application will call Apache Maven to run commands for a Maven project. If you don't have a Maven project, you can make a [Apache Wicket Quickstart](https://wicket.apache.org/start/quickstart.html).
+
+
 
 ## Create React App Boilerplate
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
