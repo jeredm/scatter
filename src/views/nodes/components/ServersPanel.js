@@ -1,5 +1,9 @@
 import React, { Component } from 'react'
 import { Header, Button, Icon, Segment, Grid } from 'semantic-ui-react'
+import { connect } from 'react-redux'
+import PropTypes from 'prop-types'
+import TerminalPanel from './TerminalPanel'
+import getSteps from '../../../actions/steps'
 
 class ServersPanel extends Component {
   render() {
@@ -8,29 +12,7 @@ class ServersPanel extends Component {
         <Header as='h1'>Servers</Header>
         <Button content='New Server' icon='server' labelPosition='left' />
         <Button content='Deploy' icon='cloud upload' labelPosition='left' />
-        <Segment>
-          <Grid>
-            <Grid.Column width={5}>
-              <Icon name='circle thin' size='large' />
-              <Icon name='terminal' size='huge' />
-            </Grid.Column>
-            <Grid.Column width={11}>
-              <Grid>
-                <Grid.Row>
-                  Install:
-                  <br />
-                  &nbsp;&nbsp; /Users/me/git/project1
-                  <br />
-                  &nbsp;&nbsp; /Users/me/git/project2
-                  <br />
-                  Deploy:
-                  <br />
-                  &nbsp;&nbsp; /Users/me/git/project3
-                </Grid.Row>
-              </Grid>
-            </Grid.Column>
-          </Grid>
-        </Segment>
+        <TerminalPanel getSteps={this.props.getSteps} />
         <Segment>
           <Grid>
             <Grid.Row>
@@ -70,4 +52,8 @@ class ServersPanel extends Component {
   }
 }
 
-export default ServersPanel
+ServersPanel.propTypes = {
+  getSteps: PropTypes.func.isRequired,
+}
+
+export default connect(null, { getSteps })(ServersPanel)
