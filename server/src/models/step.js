@@ -19,4 +19,4 @@ const stepSchema = new mongoose.Schema({
   },
 })
 
-module.exports = mongoose.model('Step', stepSchema)
+module.exports = mongoose.model('step', stepSchema)

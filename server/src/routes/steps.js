@@ -23,7 +23,7 @@ router.get('/:stepId', (req, res) => {
 })
 
 router.get('/', (req, res) => {
-  StepModel.find({}, '_id stepNm sequenceN mvnCmd path')
+  StepModel.find({})
       .then(steps => res.json(steps))
       .catch(err => res.status(500).json({ error: err }))
 })
